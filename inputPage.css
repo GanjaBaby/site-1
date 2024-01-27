@@ -1,0 +1,85 @@
+@font-face {
+    font-family: 'CustomFont';
+    src: url('04B_30__.TTF');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: #F7C7ED;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'CustomFont', sans-serif;
+    transition: background-color 1s ease; /* Add a transition for the background-color property */
+}
+
+.input-container {
+    border: 2px solid #333;
+    padding: 20px;
+    text-align: center;
+}
+
+input {
+    width: calc(100% - 20px); /* Adjust the width calculation to include padding */
+    padding: 10px;
+    margin-bottom: 20px;
+    font-family: 'CustomFont', sans-serif; /* Use the same font as in styles.css */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+h2 {
+    color: #333;
+}
+
+/* Add this style for the loading screen transition */
+.loading-screen.transitioning {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+
+body.fade-out {
+    opacity: 0;
+    transition: opacity 1s ease; /* Adjust the duration for the fade-out transition */
+}
+
+/* Add this to your existing CSS */
+body.transitioning {
+    transition: background-color 2s ease, opacity 2s ease; /* Add a transition for opacity along with background-color */
+    background-color: #F7C7ED;
+}
+
+/* Add this style for the Submit button */
+button.submit-feedback {
+    padding: 10px 30px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 14px;
+    border-bottom-left-radius: 0;
+    background-color: var(--feedback-secondary-color);
+    color: var(--feedback-primary-color);
+    font-family: 'CustomFont', sans-serif;
+    transition: all 0.3s;
+}
+
+/* Hover effect for the Submit button */
+button.submit-feedback:hover {
+    border-radius: 0px;
+    color: var(--feedback-primary-color);
+    background-color: var(--background-color);
+    background-image: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffacac' fill-opacity='0.4'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    animation: animatedBackground 5s linear infinite alternate;
+}
+
+@keyframes animatedBackground {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 100% 0;
+    }
+}
