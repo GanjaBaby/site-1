@@ -1,0 +1,63 @@
+@font-face {
+    font-family: 'CustomFont';
+    src: url('04B_30__.TTF');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'CustomFont', sans-serif;
+    background-color: #F7C7ED;
+    transition: background-color 1s ease; /* Add a transition for the background-color property */
+    transition: background 0.5s ease;
+    transition: opacity 0.5s ease; /* Add a default transition for the opacity property */
+
+}
+
+/* Add this style for the loading screen transition */
+.loading-screen.transitioning {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: 'CustomFont';
+}
+
+#noButton {
+    transition: transform 70ms linear; /* Adjust the duration for faster movement */
+}
+
+/* styles.css */
+
+body.fade-out {
+    opacity: 0;
+    transition: opacity 5s ease; /* Add a transition for the opacity property */
+}
+
+body.transitioning {
+    transition: background-color 2s ease; /* Add a transition for the background-color property */
+    background-color: #F7C7ED;
+}
+
