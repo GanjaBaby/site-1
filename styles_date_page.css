@@ -1,0 +1,74 @@
+@font-face {
+    font-family: 'CustomFont';
+    src: url('04B_30__.TTF');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* date_page.css */
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: #F7C7ED;
+    background: url('date.gif') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'CustomFont', sans-serif;
+    transition: background-color 1s ease, opacity 2s ease; /* Add transitions for background-color and opacity */
+    opacity: 0; /* Set initial state to fully transparent */
+}
+
+/* Add this class for the fade-in effect */
+body.fade-in {
+    opacity: 1;
+}
+
+
+.container {
+    text-align: center;
+    color: #fff;
+}
+
+h1 {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+#backgroundAudio {
+    display: none;
+}
+
+#countdown {
+    font-family: 'CustomFont', Arial, sans-serif;
+    font-size: 30px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.rotate-number {
+    display: inline-block;
+    perspective: 1000px;
+}
+
+.rotate-number div {
+    width: 1em;
+    height: 1em;
+    line-height: 1em;
+    text-align: center;
+    margin: 0 5px;
+    transform-style: preserve-3d;
+    transform-origin: 50% 50% 10px;
+    animation: rotate 1s infinite linear;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotateX(0deg);
+    }
+    to {
+        transform: rotateX(360deg);
+    }
+}
