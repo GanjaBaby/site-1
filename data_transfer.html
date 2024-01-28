@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <h1>Home Page</h1>
+    <div id="userData">
+        <!-- This div will hold the user data -->
+    </div>
+
+    <script>
+        // Function to parse URL parameters
+        function getURLParameter(name) {
+            var urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        // Retrieve parameters from the URL
+        var name = getURLParameter('name');
+        var dateTime = getURLParameter('dateTime');
+
+        // Display user data on the page
+        var userDataDiv = document.getElementById('userData');
+        userDataDiv.innerHTML = "<p>User: " + name + "</p><p>Date and Time: " + dateTime + "</p>";
+
+        // Redirect to date_page.html after a delay
+        setTimeout(function () {
+            window.location.href = "date_page.html?name=" + encodeURIComponent(name) + "&dateTime=" + encodeURIComponent(dateTime);
+        }, 3000); // Adjust the delay as needed
+    </script>
+</body>
+</html>
