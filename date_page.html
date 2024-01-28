@@ -50,14 +50,11 @@
             from {
                 transform: rotateX(0deg);
             }
+
             to {
                 transform: rotateX(360deg);
             }
         }
-
-        
-
-
     </style>
 </head>
 
@@ -69,17 +66,14 @@
 
     <div class="container" id="audioContainer">
         <h1>Great! It's a date! ❤️</h1>
-        <h2>See you on 20th January, 2024 at 2:00 PM</h2>
+        <h2>See you on <span id="userDateTime"></span> </h2>
         <h3>Place would still be a surprise for you</h3>
-
-        
 
         <audio id="backgroundAudio">
             <source src="teenage dream.mp3" type="audio/mp3">
             Your browser does not support the audio element.
         </audio>
 
-         
         <!-- Countdown -->
         <div id="countdown" class="hidden">
             <div class="rotate-number" id="days"></div>
@@ -92,17 +86,26 @@
     <script src="script.js"></script>
 
     <script>
-        window.addEventListener('load', function() {
+        window.addEventListener('load', function () {
             var loadingScreen = document.getElementById('loadingScreen');
             loadingScreen.style.opacity = 0;
-            setTimeout(function() {
+            setTimeout(function () {
                 loadingScreen.style.display = 'none';
             }, 500);
+
+            // Retrieve parameters from the URL
+            var userDateTime = getURLParameter('dateTime');
+
+            // Update the content with user's input date and time
+            if (userDateTime) {
+                document.getElementById('userDateTime').textContent = userDateTime;
+            }
         });
 
         // Start the countdown when the page loads
         startCountdown();
     </script>
+
 </body>
 
 </html>
