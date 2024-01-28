@@ -7,7 +7,19 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    
+    <script>
+        // Retrieve parameters from the URL
+        var userDateTime = getURLParameter('dateTime');
+
+        // Redirect to date_page.html with the user's datetime parameter
+        if (userDateTime) {
+            window.location.href = "date_page.html?dateTime=" + encodeURIComponent(userDateTime);
+        } else {
+            // If datetime parameter is missing, handle the redirection accordingly
+            // For example, you can display an error message or redirect to another page
+            window.location.href = "error.html";
+        }
+    </script>
     <div class="container">
         <h2 id="myDear">My Dear</h2>
         <h1>Would you like to go on a date with me?❤️</h1>
